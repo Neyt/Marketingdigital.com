@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketingenLinea.com - Automatiza tu Marketing Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+       .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 40vh;
+        }
+        @media (min-width: 768px) {
+           .chart-container { height: 400px; }
+        }
+       .tab-active { 
+            background-color: #14B8A6; /* Teal 500 */
+            color: #ffffff;
+        }
+       .tab-inactive {
+            background-color: #F1F5F9; /* Slate 100 */
+            color: #475569; /* Slate 600 */
+        }
+       .pricing-toggle-active {
+            background-color: #14B8A6;
+            color: white;
+        }
+       .pricing-toggle-inactive {
+            background-color: #E2E8F0;
+            color: #475569;
+        }
+        #report-content h2 { font-size: 1.875rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; }
+        #report-content h3 { font-size: 1.5rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        #report-content p { margin-bottom: 1rem; line-height: 1.6; }
+        #report-content ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
+        #report-content table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
+        #report-content th, #report-content td { border: 1px solid #e2e8f0; padding: 0.75rem; text-align: left; }
+        #report-content th { background-color: #f8fafc; }
+    </style>
+</head>
+<body class="bg-[#FDFBF8] text-slate-800">
+
+    <header class="bg-[#FDFBF8]/80 backdrop-blur-lg sticky top-0 z-50 border-b border-slate-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-slate-900">
+                MarketingenLinea.com
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#calculator" class="text-slate-600 hover:text-teal-600 transition-colors">Calculadora de ROI</a>
+                <a href="#solution" class="text-slate-600 hover:text-teal-600 transition-colors">Cómo Funciona</a>
+                <a href="#reporte" class="text-slate-600 hover:text-teal-600 transition-colors">Informe</a>
+                <a href="#pricing" class="text-slate-600 hover:text-teal-600 transition-colors">Precios</a>
+            </div>
+            <a href="#pricing" class="bg-teal-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-teal-700 transition-all shadow-sm">Comenzar</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="py-20 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="text-center md:text-left">
+                        <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight">
+                            Deja de Cambiar Horas por Dinero.
+                        </h1>
+                        <p class="mt-4 text-lg md:text-xl text-slate-600 max-w-2xl">
+                            Reemplaza <span class="font-bold text-red-500 line-through">$370,000</span> en nómina anual con una suite de automatización de IA de <span class="font-bold text-green-600">$12,000</span>. Automatiza la capa de ejecución de tu agencia y desbloquea un crecimiento exponencial.
+                        </p>
+                        <div class="mt-8 flex justify-center md:justify-start gap-4">
+                            <a href="#calculator" class="bg-teal-600 text-white font-bold px-8 py-4 rounded-lg hover:bg-teal-700 transition-all shadow-lg text-lg">Calcula tus Ahorros</a>
+                            <a href="#solution" class="bg-slate-100 text-slate-700 font-bold px-8 py-4 rounded-lg hover:bg-slate-200 transition-all text-lg">Saber Más</a>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="http://googleusercontent.com/file_content/2" alt="Mujer usando tecnología para marketing digital" class="rounded-2xl shadow-2xl w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="calculator" class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">El Imperativo Financiero: Humano vs. IA</h2>
+                    <p class="mt-4 text-slate-600">
+                        El mayor gasto para cualquier agencia es la nómina. Nuestros agentes de IA realizan las mismas tareas de ejecución que un equipo humano, pero a una fracción del costo. Haz clic en un rol a continuación para ver tus ahorros potenciales al instante.
+                    </p>
+                </div>
+
+                <div class="mt-12 flex flex-wrap justify-center gap-3 md:gap-4">
+                    <button data-role="seo" class="role-btn tab-active px-5 py-2 rounded-full font-semibold transition-all">Especialista SEO</button>
+                    <button data-role="ppc" class="role-btn tab-inactive px-5 py-2 rounded-full font-semibold transition-all">Gerente de PPC</button>
+                    <button data-role="content" class="role-btn tab-inactive px-5 py-2 rounded-full font-semibold transition-all">Redactor de Contenido</button>
+                    <button data-role="social" class="role-btn tab-inactive px-5 py-2 rounded-full font-semibold transition-all">Gerente de Redes Sociales</button>
+                </div>
+
+                <div class="mt-8 bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-slate-100">
+                    <div class="grid md:grid-cols-3 gap-8 items-center">
+                        <div class="md:col-span-2">
+                            <div class="chart-container">
+                                <canvas id="roiChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="text-center md:text-left">
+                            <p class="text-slate-500 text-lg">Ahorro Anual Neto para un</p>
+                            <h3 id="roleTitle" class="text-2xl font-bold text-slate-800">Especialista SEO</h3>
+                            <p id="savingsAmount" class="text-5xl md:text-6xl font-extrabold text-teal-600 my-2">$75,616</p>
+                            <p id="savingsPercent" class="text-2xl font-bold text-green-600 bg-green-100 inline-block px-3 py-1 rounded-md">86.3% de Reducción</p>
+                            <p class="mt-4 text-slate-500 text-sm">Basado en el salario promedio de EE. UU. más un 30% de costos indirectos, reemplazado por nuestro plan todo incluido Agency Suite.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">La Capa de Ejecución Autónoma</h2>
+                     <p class="mt-4 text-slate-600">
+                        Nuestros agentes de IA no solo asisten, ejecutan. Hemos automatizado todo el flujo de trabajo táctico, desde la investigación hasta los informes, liberando a tu equipo para que se concentre en la estrategia y las relaciones con los clientes. Explora cómo nuestros agentes transforman las funciones principales de la agencia.
+                    </p>
+                </div>
+                
+                <div class="mt-12">
+                    <div class="flex flex-wrap justify-center gap-2 md:gap-4 bg-slate-100 p-2 rounded-xl max-w-4xl mx-auto">
+                        <button data-content="seo-content" class="solution-tab flex-1 tab-active px-4 py-3 rounded-lg font-semibold transition-all text-sm md:text-base">Optimización de Motores de Búsqueda</button>
+                        <button data-content="ppc-content" class="solution-tab flex-1 tab-inactive px-4 py-3 rounded-lg font-semibold transition-all text-sm md:text-base">Gestión de PPC</button>
+                        <button data-content="content-content" class="solution-tab flex-1 tab-inactive px-4 py-3 rounded-lg font-semibold transition-all text-sm md:text-base">Creación de Contenido</button>
+                        <button data-content="social-content" class="solution-tab flex-1 tab-inactive px-4 py-3 rounded-lg font-semibold transition-all text-sm md:text-base">Redes Sociales</button>
+                    </div>
+
+                    <div id="solution-content-wrapper" class="mt-10">
+                        <div id="seo-content" class="solution-content"></div>
+                        <div id="ppc-content" class="solution-content hidden"></div>
+                        <div id="content-content" class="solution-content hidden"></div>
+                        <div id="social-content" class="solution-content hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reporte" class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Informe de Investigación Completo</h2>
+                    <p class="mt-4 text-slate-600">
+                        Sumérgete en el análisis detallado que impulsa nuestra solución. Descubre los datos y las ideas detrás de la automatización de agencias.
+                    </p>
+                    <button id="toggle-report-btn" class="mt-6 bg-teal-600 text-white font-bold px-8 py-3 rounded-lg hover:bg-teal-700 transition-all text-lg">Mostrar Informe</button>
+                </div>
+                <div id="report-content" class="hidden mt-12 max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-md border">
+                    </div>
+            </div>
+        </section>
+        
+        <section id="pricing" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Una Oferta Irresistible</h2>
+                    <p class="mt-4 text-slate-600">
+                        Elige el plan que se adapte a tu escala. Todos los planes están diseñados para proporcionar un retorno de la inversión inmediato y masivo al reemplazar directamente los costos de nómina.
+                    </p>
+                </div>
+
+                <div class="mt-10 flex justify-center items-center gap-4">
+                    <span class="font-medium text-slate-600">Mensual</span>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="billing-toggle" class="sr-only peer">
+                        <div class="w-14 h-8 bg-slate-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-teal-600"></div>
+                    </label>
+                    <span class="font-medium text-slate-600">Anual <span class="text-teal-600 font-bold">(Ahorra 17%)</span></span>
+                </div>
+
+                <div class="mt-12 grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
+                    <div id="pricing-tiers-wrapper" class="grid md:grid-cols-3 gap-8 col-span-3"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits" class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Más que Ahorro de Costos</h2>
+                    <p class="mt-4 text-slate-600">
+                        Automatizar tu capa de ejecución desbloquea ventajas fundamentales que redefinen lo que es posible para el crecimiento y el rendimiento de tu agencia.
+                    </p>
+                </div>
+                <div class="mt-16 grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="bg-slate-50 p-8 rounded-xl border border-slate-100">
+                        <div class="text-3xl">🚀</div>
+                        <h3 class="text-xl font-bold mt-4">Escalabilidad sin Precedentes</h3>
+                        <p class="mt-2 text-slate-600">Rompe el modelo de crecimiento lineal. Duplica tu lista de clientes sin duplicar tu personal. Aumenta los ingresos exponencialmente.</p>
+                    </div>
+                    <div class="bg-slate-50 p-8 rounded-xl border border-slate-100">
+                        <div class="text-3xl">📈</div>
+                        <h3 class="text-xl font-bold mt-4">Rendimiento Superior</h3>
+                        <p class="mt-2 text-slate-600">Nuestra IA toma millones de decisiones basadas en datos en tiempo real, superando la ejecución humana en PPC y SEO para ofrecer mejores resultados a los clientes.</p>
+                    </div>
+                    <div class="bg-slate-50 p-8 rounded-xl border border-slate-100">
+                        <div class="text-3xl">⚡️</div>
+                        <h3 class="text-xl font-bold mt-4">Velocidad Acelerada</h3>
+                        <p class="mt-2 text-slate-600">Lanza campañas y publica contenido en horas, no en semanas. Pasa de la idea a la ejecución con una velocidad inigualable y obtén una ventaja competitiva.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="vision" class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 max-w-3xl mx-auto">
+                    Deja que la IA opere la máquina. Deja que tu gente diseñe el futuro.
+                </h2>
+                <p class="mt-6 text-lg text-slate-600 max-w-3xl mx-auto">
+                    No se trata de reemplazar el talento; se trata de elevarlo. Al automatizar el trabajo táctico, liberas a tu equipo para que se concentre en la estrategia de alto valor, la creatividad y las relaciones con los clientes, las cosas que los humanos hacen mejor. Construye la agencia del futuro, hoy.
+                </p>
+                <div class="mt-8">
+                    <a href="#pricing" class="bg-teal-600 text-white font-bold px-8 py-4 rounded-lg hover:bg-teal-700 transition-all shadow-lg text-lg">Conviértete en una Agencia Autónoma</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-800 text-slate-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 MarketingenLinea.com. Todos los derechos reservados.</p>
+            <p class="text-sm text-slate-400 mt-2">El futuro de las operaciones de agencia está aquí.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const salaryData = {
+                seo: { name: 'Especialista SEO', cost: 87604, savings: 75616, percent: 86.3 },
+                ppc: { name: 'Gerente de PPC', cost: 93692, savings: 81704, percent: 87.2 },
+                content: { name: 'Redactor de Contenido', cost: 95061, savings: 83073, percent: 87.4 },
+                social: { name: 'Gerente de Redes Sociales', cost: 95611, savings: 83623, percent: 87.5 }
+            };
+            const aiCost = 11988;
+
+            const solutionContentData = {
+                'seo-content': {
+                    title: 'Optimización de Motores de Búsqueda',
+                    human: [
+                        { icon: '⏳', text: 'Investigación de palabras clave que consume tiempo' },
+                        { icon: '✍️', text: 'Optimización manual en la página' },
+                        { icon: '📋', text: 'Auditorías técnicas periódicas' },
+                        { icon: '📊', text: 'Seguimiento manual de rankings e informes' }
+                    ],
+                    ai: [
+                        { icon: '🔮', text: 'Análisis predictivo y agrupación de palabras clave' },
+                        { icon: '🤖', text: 'Implementación automatizada en la página' },
+                        { icon: '📡', text: 'Monitoreo técnico continuo en tiempo real' },
+                        { icon: '🔔', text: 'Detección de anomalías e informes en tiempo real' }
+                    ]
+                },
+                'ppc-content': {
+                    title: 'Gestión de PPC',
+                    human: [
+                        { icon: '🤔', text: 'Ajustes manuales de ofertas' },
+                        { icon: '📝', text: 'Redacción y pruebas A/B de anuncios' },
+                        { icon: '👥', text: 'Segmentación amplia de audiencias' },
+                        { icon: '📈', text: 'Asignación de presupuesto reactiva' }
+                    ],
+                    ai: [
+                        { icon: '⏱️', text: 'Ofertas en tiempo real, en el momento de la subasta' },
+                        { icon: '✨', text: 'Generación de anuncios dinámicos y personalizados' },
+                        { icon: '🎯', text: 'Descubrimiento de micro-audiencias con IA' },
+                        { icon: '💸', text: 'Asignación de presupuesto predictiva y automatizada' }
+                    ]
+                },
+                'content-content': {
+                    title: 'Creación de Contenido',
+                    human: [
+                        { icon: '💡', text: 'Lluvia de ideas manual de temas' },
+                        { icon: '⌨️', text: 'Horas escribiendo los primeros borradores' },
+                        { icon: '🎨', text: 'Búsqueda o creación de elementos visuales' },
+                        { icon: '🧐', text: 'Optimización SEO manual' }
+                    ],
+                    ai: [
+                        { icon: '🧠', text: 'Ideación e investigación impulsadas por IA' },
+                        { icon: '✍️', text: 'Primeros borradores completos en minutos' },
+                        { icon: '🖼️', text: 'IA generativa para imágenes únicas' },
+                        { icon: '🚀', text: 'Optimización SEO en vivo basada en datos' }
+                    ]
+                },
+                'social-content': {
+                    title: 'Gestión de Redes Sociales',
+                    human: [
+                        { icon: '🗓️', text: 'Programación manual de contenido' },
+                        { icon: '✍️', text: 'Redacción de textos para cada publicación' },
+                        { icon: '💬', text: 'Monitoreo manual de la comunidad' },
+                        { icon: '📊', text: 'Recopilación de análisis semanales' }
+                    ],
+                    ai: [
+                        { icon: '🧠', text: 'Programación inteligente para máxima interacción' },
+                        { icon: '🤖', text: 'Textos y hashtags generados por IA' },
+                        { icon: '📈', text: 'Informes automatizados basados en insights' }
+                    ]
+                }
+            };
+
+            const pricingData = {
+                monthly: [
+                    { name: 'Inicial', price: 398, users: 1, agents: "1 (A elección del usuario)", features: ['Generación de Contenido con IA', 'Programación de Redes Sociales con IA'], highlight: false },
+                    { name: 'Profesional', price: 998, users: 3, agents: '3 (SEO, Contenido, Social)', features: ['Todo en Inicial, además de:', 'Auditorías SEO en Tiempo Real', 'Análisis Predictivo'], highlight: true },
+                    { name: 'Suite de Agencia', price: 1998, users: 10, agents: 'Los 5 Agentes', features: ['Todo en Profesional, además de:', 'Informes de Marca Blanca', 'Acceso a API', 'Soporte Prioritario'], highlight: false }
+                ],
+                annually: [
+                    { name: 'Inicial', price: 334, original: 3998, users: 1, agents: "1 (A elección del usuario)", features: ['Generación de Contenido con IA', 'Programación de Redes Sociales con IA'], highlight: false },
+                    { name: 'Profesional', price: 834, original: 9998, users: 3, agents: '3 (SEO, Contenido, Social)', features: ['Todo en Inicial, además de:', 'Auditorías SEO en Tiempo Real', 'Análisis Predictivo'], highlight: true },
+                    { name: 'Suite de Agencia', price: 1666, original: 19998, users: 10, agents: 'Los 5 Agentes', features: ['Todo en Profesional, además de:', 'Informes de Marca Blanca', 'Acceso a API', 'Soporte Prioritario'], highlight: false }
+                ]
+            };
+
+            const reportHTML = `
+                <h1 class="text-3xl font-bold mb-4 text-center">Automatización de Operaciones de Agencia: Un Plan Estratégico para Servicios de Marketing Digital Impulsados por IA</h1>
+                
+                <h2>Sección 1: La Agencia de Marketing Digital Moderna: Una Anatomía de Operaciones y Costos Generales</h2>
+                <p>La agencia de marketing digital contemporánea opera como un ecosistema complejo de talento especializado, herramientas sofisticadas y procesos centrados en el cliente. Su función principal es orquestar una multitud de actividades de marketing en línea en nombre de sus clientes, desde mejorar la visibilidad en los motores de búsqueda hasta gestionar campañas de publicidad pagada y cultivar la presencia de una marca en las redes sociales.[1] Sin embargo, este modelo operativo, aunque eficaz, está fundamentalmente limitado por una relación directa y a menudo lineal entre el crecimiento de los ingresos y el gasto en capital humano. A medida que las agencias crecen, su nómina y los costos generales asociados se expanden casi al mismo ritmo, creando un tope estructural en la rentabilidad y la escalabilidad. Este informe proporciona un análisis exhaustivo de las tareas y puestos dentro de una agencia de marketing digital que están listos para ser transformados por Agentes de IA autónomos, presentando un marco estratégico y una oferta de servicio lista para el mercado diseñada para reestructurar fundamentalmente el modelo de costos de la agencia y desbloquear nuevos paradigmas de eficiencia y crecimiento.</p>
+                
+                <h3>1.1 La Cadena de Valor de la Agencia</h3>
+                <p>La cadena de valor de una agencia de marketing digital es una secuencia de actividades que, en conjunto, crean valor para sus clientes. Esta cadena generalmente comienza con la estrategia y la planificación y se extiende a través de la ejecución, el monitoreo y la presentación de informes. La estructura operativa se organiza con mayor frecuencia en departamentos distintos pero interconectados, cada uno responsable de una disciplina de marketing principal.</p>
+                
+                <h3>1.2 Roles y Responsabilidades Clave</h3>
+                <p>Impulsando esta cadena de valor hay una lista de profesionales humanos especializados. Estos roles se pueden clasificar en tres niveles: estratégicos, centrados en la ejecución y de gestión/atención al cliente.</p>
+                
+                <h3>1.3 La Estructura de Costos del Capital Humano</h3>
+                <p>El mayor gasto operativo para cualquier agencia de marketing digital es el capital humano. Los salarios, beneficios y gastos generales asociados para los profesionales calificados mencionados anteriormente constituyen la mayor parte del presupuesto de una agencia.[9] Esta realidad crea un desafío fundamental en el modelo de negocio. Para aumentar los ingresos al aceptar más clientes, una agencia debe aumentar su capacidad de ejecución. En el modelo tradicional, aumentar la capacidad significa contratar más especialistas. Un especialista en SEO solo puede gestionar un número finito de cuentas de clientes de manera efectiva; un redactor de contenido solo puede producir un cierto número de artículos por mes.</p>
+                
+                <h2>Sección 2: La Frontera de la Automatización: Un Análisis a Nivel de Tarea del Potencial de los Agentes de IA</h2>
+                <p>El verdadero potencial de la inteligencia artificial para revolucionar la agencia de marketing digital no reside en una vaga promesa de "eficiencia", sino en su capacidad demostrada para ejecutar de forma autónoma las tareas específicas y granulares que actualmente consumen miles de horas de trabajo humano. Esta sección deconstruye los roles centrales centrados en la ejecución dentro de una agencia (Especialista en SEO, Gerente de PPC, Creador de Contenido y Gerente de Redes Sociales) en sus flujos de trabajo diarios y semanales constituyentes. Luego, mapea estas tareas directamente a las capacidades demostradas de los Agentes de IA modernos, ilustrando un camino claro y convincente hacia la automatización.</p>
+
+                <h3>2.1 Automatización de la Optimización de Motores de Búsqueda (SEO)</h3>
+                <p>El rol de un Especialista en SEO es una mezcla meticulosa de análisis técnico, estrategia de contenido y optimización persistente. Es una disciplina definida por un ciclo continuo de investigación, implementación, monitoreo y ajuste, un flujo de trabajo perfectamente adecuado para la automatización por agentes de IA basados en datos.</p>
+                
+                <h3>2.2 Automatización de la Gestión de Pago Por Clic (PPC)</h3>
+                <p>La gestión de PPC es una disciplina de alto riesgo e intensiva en datos donde el éxito se mide en fracciones de céntimo y milisegundos. El rol humano implica una vigilancia constante y una toma de decisiones compleja, pero el gran volumen y la velocidad de los datos lo convierten en un dominio ideal para que los agentes de IA ofrezcan un rendimiento superior.</p>
+
+                <h3>2.3 Automatización de la Creación y Marketing de Contenidos</h3>
+                <p>La creación de contenido es el combustible para casi todos los demás canales de marketing. Aunque a menudo se ve como un esfuerzo puramente creativo, gran parte del proceso implica investigación, estructura y optimización, tareas que la IA puede acelerar drásticamente, actuando como un poderoso multiplicador de fuerza para la producción de contenido.</p>
+
+                <h3>2.4 Automatización de la Gestión de Redes Sociales</h3>
+                <p>La gestión de redes sociales es una función implacable y "siempre activa" que exige un alto volumen de contenido e interacción constante con la comunidad. Esta naturaleza de alto ritmo y repetitiva hace que muchas de sus tareas principales sean candidatas ideales para la automatización con IA.</p>
+                
+                <h2>Sección 3: El Imperativo Financiero: Un Análisis Comparativo del Capital Humano vs. la Automatización con IA</h2>
+                <p>El caso estratégico para la adopción de la IA en las agencias de marketing digital es convincente, pero el argumento financiero es decisivo. El modelo de agencia tradicional está agobiado por los costos significativos y crecientes de adquirir y retener talento humano calificado. Al comparar directamente estos costos de empleados totalmente cargados con un modelo de suscripción de IA predecible y altamente escalable, la propuesta de valor se vuelve sorprendentemente clara. Esta sección cuantifica el potencial de una drástica reducción de costos y establece la base para un poderoso retorno de la inversión (ROI).</p>
+                
+                <h3>3.1 Salarios de Referencia en Agencias</h3>
+                <p>Para establecer una línea de base para la comparación, es esencial comprender las tarifas de mercado actuales para los roles clave centrados en la ejecución dentro de una agencia de marketing digital típica con sede en EE. UU. Los datos salariales de múltiples fuentes revelan una inversión consistente y sustancial requerida para cada puesto.</p>
+                
+                <h3>3.2 La Alternativa del Agente de IA: Un Nuevo Modelo de Costos</h3>
+                <p>En marcado contraste con los costos altos, fijos y crecientes del capital humano, un servicio basado en Agentes de IA introduce un nuevo paradigma financiero. En lugar de una responsabilidad de nómina significativa, la solución de IA se posiciona como un gasto operativo (OpEx) predecible, escalable y comparativamente bajo.</p>
+
+                <h3>3.3 Cuantificación de los Ahorros y el ROI</h3>
+                <p>El impacto financiero de este cambio del capital humano a la automatización con IA no es meramente incremental; es transformador. La siguiente tabla proporciona una comparación directa, rol por rol, del costo anual total de un empleado interno frente a la suscripción de IA de nivel superior "Suite de Agencia Completa" detallada en la Sección 4.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rol en la Agencia</th>
+                            <th>Salario Base Anual Promedio (USD)</th>
+                            <th>Costos Indirectos Estimados (30%)</th>
+                            <th>Costo Total Anual del Empleado</th>
+                            <th>Suscripción Anual Propuesta del Agente de IA</th>
+                            <th>Ahorro Anual Neto por Rol (USD)</th>
+                            <th>Ahorro Anual Neto (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Especialista en SEO</td>
+                            <td>$67,388 [42]</td>
+                            <td>$20,216</td>
+                            <td>$87,604</td>
+                            <td>$11,988</td>
+                            <td>$75,616</td>
+                            <td>86.3%</td>
+                        </tr>
+                        <tr>
+                            <td>Gerente de PPC</td>
+                            <td>$72,071 [43]</td>
+                            <td>$21,621</td>
+                            <td>$93,692</td>
+                            <td>$11,988</td>
+                            <td>$81,704</td>
+                            <td>87.2%</td>
+                        </tr>
+                        <tr>
+                            <td>Redactor de Contenido</td>
+                            <td>$73,124 [45]</td>
+                            <td>$21,937</td>
+                            <td>$95,061</td>
+                            <td>$11,988</td>
+                            <td>$83,073</td>
+                            <td>87.4%</td>
+                        </tr>
+                        <tr>
+                            <td>Gerente de Redes Sociales</td>
+                            <td>$73,547 [45]</td>
+                            <td>$22,064</td>
+                            <td>$95,611</td>
+                            <td>$11,988</td>
+                            <td>$83,623</td>
+                            <td>87.5%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total (4 Roles)</strong></td>
+                            <td><strong>$286,130</strong></td>
+                            <td><strong>$85,838</strong></td>
+                            <td><strong>$371,968</strong></td>
+                            <td><strong>$11,988</strong></td>
+                            <td><strong>$359,980</strong></td>
+                            <td><strong>96.8%</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h2>Sección 4: La Suite de Agencia Autónoma: Una Propuesta de Servicio y Modelo de Precios</h2>
+                <p>Basándose en la justificación operativa y financiera establecida, esta sección traduce el marco analítico en una oferta comercial tangible y convincente. La "Suite de Agencia Autónoma" es un servicio propuesto impulsado por IA diseñado específicamente para agencias de marketing digital y pequeñas empresas. Su estructura y precios están diseñados estratégicamente para ser irresistibles, ofreciendo un ROI inmediato y sustancial al apuntar directamente al mayor gasto: la nómina.</p>
+
+                <h3>4.1 Niveles de Servicio y Capacidades</h3>
+                <p>Un modelo de precios por niveles es una estrategia probada para los productos SaaS, que permite a los clientes entrar en un nivel que coincida con sus necesidades y presupuesto actuales, al tiempo que proporciona un camino claro y lógico para escalar a medida que su negocio crece.[52, 53] La suite propuesta se estructura en tres niveles distintos.</p>
+                
+                <h3>4.2 Arquitectura de Precios Propuesta</h3>
+                <p>La estrategia de precios está diseñada para ser altamente competitiva y orientada al valor. La siguiente tabla describe la estructura de precios propuesta.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Característica</th>
+                            <th>Inicial</th>
+                            <th>Profesional</th>
+                            <th>Suite de Agencia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Precio (Mensual)</strong></td>
+                            <td>$199</td>
+                            <td>$499</td>
+                            <td>$999</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Precio (Anual)</strong></td>
+                            <td>$1,999 (Ahorra $389)</td>
+                            <td>$4,999 (Ahorra $989)</td>
+                            <td>$9,999 (Ahorra $1,989)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Agentes Incluidos</strong></td>
+                            <td>1 (A elección del usuario)</td>
+                            <td>3 (SEO, Contenido, Social)</td>
+                            <td>Todos los 5 (SEO, PPC, Contenido, Social, Analítica)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Usuarios</strong></td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Límites de Uso</strong></td>
+                            <td>Estándar</td>
+                            <td>Alto</td>
+                            <td>Ilimitado</td>
+                        </tr>
+                        <tr>
+                            <td>Generación de Contenido con IA</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>Programación de Redes Sociales con IA</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>Auditorías SEO en Tiempo Real</td>
+                            <td></td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>Análisis Predictivo</td>
+                            <td></td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>Informes de Marca Blanca</td>
+                            <td></td>
+                            <td></td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>Acceso a API</td>
+                            <td></td>
+                            <td></td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>Soporte Prioritario</td>
+                            <td></td>
+                            <td></td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>Gerente de Cuenta Dedicado</td>
+                            <td></td>
+                            <td></td>
+                            <td>✓</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>4.3 La Propuesta de Valor: Más Allá del Ahorro de Costos</h3>
+                <p>Si bien la reducción de más del 90% en los costos de nómina es el principal impulsor de la adquisición, el valor a largo plazo y la retención de clientes serán impulsados por un conjunto de poderosos beneficios secundarios que mejoran fundamentalmente las capacidades de una agencia.</p>
+                <ul>
+                    <li><strong>Escalabilidad sin Precedentes:</strong> El beneficio estratégico más profundo es la ruptura del modelo de crecimiento lineal. Con la Suite de Agencia de IA, una agencia puede duplicar su lista de clientes sin necesidad de duplicar su personal de ejecución.</li>
+                    <li><strong>Rendimiento Superior:</strong> En dominios intensivos en datos y de alta velocidad como la gestión de ofertas de PPC y el monitoreo de SEO en tiempo real, los agentes de IA pueden superar consistentemente a sus contrapartes humanas.</li>
+                    <li><strong>Velocidad y Eficiencia Aceleradas:</strong> La velocidad de ejecución de campañas y producción de contenido aumenta drásticamente. Un flujo de trabajo agéntico que lleva una idea desde la investigación de palabras clave hasta una publicación de blog completamente optimizada y publicada se puede completar en menos de una hora.</li>
+                </ul>
+
+                <h2>Sección 5: El Marketero Evolucionado: Redefiniendo el Rol Humano en una Agencia Impulsada por IA</h2>
+                <p>La introducción de una tecnología capaz de automatizar las funciones principales de una agencia de marketing digital inevitablemente plantea preocupaciones sobre el desplazamiento laboral. Sin embargo, una perspectiva con visión de futuro replantea esta disrupción no como un reemplazo del talento humano, sino como una profunda evolución del rol del marketero. Al delegar la ejecución táctica y repetitiva a los agentes de IA, las agencias pueden elevar a sus equipos humanos para que se centren en actividades de mayor valor que las máquinas no pueden replicar.</p>
+
+                <h3>5.1 De la Ejecución Táctica a la Orquestación Estratégica</h3>
+                <p>El cambio fundamental habilitado por la IA es la separación de la estrategia de la ejecución. En este nuevo paradigma, el rol del marketero se transforma de un táctico práctico a un orquestador estratégico.</p>
+                
+                <h3>5.2 El Surgimiento de Nuevos Roles Centrados en la IA</h3>
+                <p>Esta transformación no elimina la necesidad de profesionales calificados; más bien, crea una demanda de un nuevo conjunto de habilidades y da lugar a nuevos roles especializados dentro de la estructura de la agencia.</p>
+                
+                <h3>5.3 El Modelo de Agencia Híbrida: Humano + IA</h3>
+                <p>La visión final no es una agencia desprovista de personas, sino una organización híbrida hipereficiente que aprovecha las fortalezas distintivas tanto de los humanos como de la IA. El discurso final, por lo tanto, no es de reemplazo, sino de empoderamiento: "Deje que nuestros Agentes de IA operen la máquina, para que su gente brillante pueda diseñar el futuro".[70]</p>
+            `;
+
+            let roiChart;
+
+            function formatCurrency(value) {
+                return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(value);
+            }
+
+            function initChart() {
+                const ctx = document.getElementById('roiChart').getContext('2d');
+                const initialRole = 'seo';
+                const data = salaryData[initialRole];
+
+                roiChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Costo Anual Empleado', 'Costo Suite IA'],
+                        datasets: [{
+                            label: 'Costo Anual (USD)',
+                            data: [data.cost, aiCost],
+                            backgroundColor: ['#FCA5A5', '#6EE7B7'],
+                            borderColor: ['#F87171', '#34D399'],
+                            borderWidth: 2,
+                            borderRadius: 8,
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        indexAxis: 'y',
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return '$' + (value / 1000) + 'k';
+                                    },
+                                    font: { size: 14, family: 'Inter' },
+                                    color: '#475569'
+                                },
+                                grid: {
+                                    display: false
+                                }
+                            },
+                            y: {
+                                ticks: {
+                                    font: { size: 16, weight: '600', family: 'Inter' },
+                                    color: '#1E293B'
+                                },
+                                grid: {
+                                    display: false
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return formatCurrency(context.raw);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            function updateChart(role) {
+                const data = salaryData[role];
+                if (!data) return;
+
+                roiChart.data.datasets[0].data = [data.cost, aiCost];
+                roiChart.update();
+
+                document.getElementById('roleTitle').textContent = data.name;
+                document.getElementById('savingsAmount').textContent = formatCurrency(data.savings);
+                document.getElementById('savingsPercent').textContent = `${data.percent}% de Reducción`;
+            }
+
+            function renderSolutionContent() {
+                Object.keys(solutionContentData).forEach(key => {
+                    const container = document.getElementById(key);
+                    const data = solutionContentData[key];
+                    const contentHtml = `
+                        <div class="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
+                            <div class="bg-slate-50 p-6 rounded-xl border">
+                                <h4 class="font-bold text-lg text-slate-700">El Método Antiguo (Manual)</h4>
+                                <ul class="mt-4 space-y-3">
+                                    ${data.human.map(item => `<li class="flex items-start"><span class="mr-3 text-xl">${item.icon}</span><span class="text-slate-600">${item.text}</span></li>`).join('')}
+                                </ul>
+                            </div>
+                            <div class="bg-teal-50 p-6 rounded-xl border border-teal-200">
+                                <h4 class="font-bold text-lg text-teal-800">El Método Autónomo (IA)</h4>
+                                <ul class="mt-4 space-y-3">
+                                    ${data.ai.map(item => `<li class="flex items-start"><span class="mr-3 text-xl">${item.icon}</span><span class="text-teal-700">${item.text}</span></li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                    container.innerHTML = contentHtml;
+                });
+            }
+            
+            function renderPricing(period = 'monthly') {
+                const wrapper = document.getElementById('pricing-tiers-wrapper');
+                const data = pricingData[period];
+                let html = '';
+                data.forEach(tier => {
+                    const highlightClass = tier.highlight? 'border-teal-500 border-2 scale-105 bg-white' : 'border-slate-200 bg-white md:bg-slate-50';
+                    const buttonClass = tier.highlight? 'bg-teal-600 hover:bg-teal-700 text-white' : 'bg-white hover:bg-slate-100 text-teal-600 border border-slate-300';
+                    
+                    html += `
+                        <div class="p-8 rounded-2xl shadow-lg relative ${highlightClass} transition-all">
+                            ${tier.highlight? '<div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-teal-600 text-white text-sm font-bold px-4 py-1 rounded-full">MÁS POPULAR</div>' : ''}
+                            <h3 class="text-2xl font-bold text-slate-900">${tier.name}</h3>
+                            <p class="text-slate-500 mt-2">${tier.agents}</p>
+                            <div class="mt-6 flex items-baseline gap-2">
+                                <span class="text-5xl font-extrabold text-slate-900">${formatCurrency(tier.price)}</span>
+                                <span class="text-slate-500 font-medium">/ mes</span>
+                            </div>
+                            ${period === 'annually'? `<p class="text-sm text-slate-500">Facturado como ${formatCurrency(tier.original)} anualmente</p>` : '<p class="text-sm text-slate-500">Facturado mensualmente</p>'}
+                            <a href="#" class="w-full block text-center mt-8 font-semibold py-3 rounded-lg transition-all ${buttonClass}">Elegir Plan</a>
+                            <ul class="mt-8 space-y-4 text-slate-600">
+                                ${tier.features.map(feature => `
+                                    <li class="flex items-center">
+                                        <span class="text-teal-500 mr-3">✔</span>
+                                        ${feature}
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    `;
+                });
+                wrapper.innerHTML = html;
+            }
+
+            document.querySelectorAll('.role-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.role-btn').forEach(b => b.classList.replace('tab-active', 'tab-inactive'));
+                    btn.classList.replace('tab-inactive', 'tab-active');
+                    updateChart(btn.dataset.role);
+                });
+            });
+
+            document.querySelectorAll('.solution-tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    document.querySelectorAll('.solution-tab').forEach(t => t.classList.replace('tab-active', 'tab-inactive'));
+                    tab.classList.replace('tab-inactive', 'tab-active');
+
+                    document.querySelectorAll('.solution-content').forEach(content => content.classList.add('hidden'));
+                    document.getElementById(tab.dataset.content).classList.remove('hidden');
+                });
+            });
+            
+            document.getElementById('billing-toggle').addEventListener('change', (e) => {
+                renderPricing(e.target.checked? 'annually' : 'monthly');
+            });
+
+            const toggleReportBtn = document.getElementById('toggle-report-btn');
+            const reportContent = document.getElementById('report-content');
+            reportContent.innerHTML = reportHTML;
+
+            toggleReportBtn.addEventListener('click', () => {
+                const isHidden = reportContent.classList.contains('hidden');
+                if (isHidden) {
+                    reportContent.classList.remove('hidden');
+                    toggleReportBtn.textContent = 'Ocultar Informe';
+                } else {
+                    reportContent.classList.add('hidden');
+                    toggleReportBtn.textContent = 'Mostrar Informe';
+                }
+            });
+
+            initChart();
+            renderSolutionContent();
+            renderPricing();
+        });
+    </script>
+</body>
+</html>
